@@ -18,28 +18,19 @@ return array(
 	|
 	*/
 
-	'connections' => array(
+	'default' => 'pgsql',
 
-		'mysql' => array(
-			'driver'    => 'mysql',
-			'host'      => 'localhost',
-			'database'  => 'homestead',
-			'username'  => 'homestead',
-			'password'  => 'secret',
-			'charset'   => 'utf8',
-			'collation' => 'utf8_unicode_ci',
-			'prefix'    => '',
-		),
+	'connections' => array(
 
 		'pgsql' => array(
 			'driver'   => 'pgsql',
 			'host'     => 'localhost',
-			'database' => 'homestead',
-			'username' => 'homestead',
-			'password' => 'secret',
+			'database' => $_ENV['DATABASE_PGSQL_DATABASE'],
+			'username' => $_ENV['DATABASE_PGSQL_USERNAME'],
+			'password' => $_ENV['DATABASE_PGSQL_PASSWORD'],
 			'charset'  => 'utf8',
-			'prefix'   => '',
-			'schema'   => 'public',
+			'prefix'   => 'satuapi_',
+			'schema'   => $_ENV['DATABASE_PGSQL_SCHEMA'],
 		),
 
 	),
