@@ -15,6 +15,19 @@ Route::post('oauth/access_token', function() {
     return Response::json(Authorizer::issueAccessToken());
 });
 
+Route::api(['version' => 'v1', 'protected' => true], function () {
+
+    Route::get('alumni', ['scopes' => 'alumni_data', function () {
+
+        echo "test alumni";
+    }]);
+
+    Route::get('news', function () {
+
+        echo "test news";
+    });
+});
+
 Route::get('/', function()
 {
 	return View::make('hello');
