@@ -5,7 +5,9 @@
 	"license": "MIT",
 	"type": "project",
 	"require": {
-		"laravel/framework": "4.2.*"
+		"laravel/framework": "4.2.*",
+		"dingo/api": "0.7.*",
+		"lucadegasperi/oauth2-server-laravel": "3.0.*"
 	},
 	"autoload": {
 		"classmap": [
