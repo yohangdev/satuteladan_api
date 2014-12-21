@@ -2,8 +2,14 @@
 ## Local Development Config
 
 ### Setup Vagrant Box
-```
+```bash
 $ vagrant up
+```
+
+### Setup Local DNS
+Edit `/etc/hosts` or Windows Hosts file, add line:
+```bash
+192.168.22.10 api.satuteladan.dev
 ```
 
 ### Setup Laravel Environment
@@ -22,15 +28,32 @@ return array(
 ```
 
 ### Setup PostgreSQL
-```
+Create Database:
+```bash
 # SSH into vagrant box
 $ vagrant ssh
 
 # Create new database via user user "postgres"
 # and assign it to user "root"
 $ sudo -u postgres /usr/bin/createdb --echo --owner=root satuteladan_api
-
+```
+Create Schema:
+```bash
 $ sudo -u root psql -d satuteladan_api
-PSQL satuteladan_api => CREATE SCHEMA "api1";
-PSQL satuteladan_api => \q
+```
+```sql
+satuteladan_api => CREATE SCHEMA "api1"; # Create Schema
+satuteladan_api => \q # Quit
+```
+
+### Test Connection
+Command:
+```bash
+$ curl -X POST -H "Accept: application/vnd.satuteladan.v1+json" -F "grant_type=client_credentials" -F "client_id=myapp" -F "client_secret=myapp" http://api.satuteladan.dev/oauth/access_token
+```
+
+Output:
+```json
+
+{"access_token":"ofdojZ7Y7sKbuckVhTr9eNiiq066iPrA1ukFl3Yi","token_type":"Bearer","expires_in":3600}
 ```
