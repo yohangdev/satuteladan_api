@@ -1,5 +1,18 @@
+# SatuTeladan API
 
-## Local Development Config
+[![Build Status](https://travis-ci.org/yohang88/satuteladan_api.svg?branch=master)](https://travis-ci.org/yohang88/satuteladan_api)
+
+Adalah Backend System untuk aplikasi pengelola database alumni SMA Negeri 1 Teladan Yogyakarta. Sistem sebelumnya pernah digunakan pada tahun 2007-2012 dan beralamat di http://alumni.sman1yogya.sch.id
+
+Prinsip Pengelolaan:
+- Crowd Sourcing
+- Transparansi
+- Privacy Control
+
+## Contribution: Frontend Development
+Akan segera dibuat dokumentasi cara menggunakan API ini.
+
+## Contribution: API Development
 
 ### Setup Vagrant Box
 ```bash
