@@ -82,9 +82,9 @@ return [
 
         'password' => [
             'class' => '\League\OAuth2\Server\Grant\PasswordGrant',
-            'callback' => function($email, $password) {
+            'callback' => function($username, $password) {
                 $credentials = [
-                                    'email'    => $email,
+                                    'email'    => $username,
                                     'password' => $password,
                                 ];
 
@@ -182,7 +182,7 @@ return [
     | This is useful to allow only trusted clients to access your API differently
     |
     */
-    'limit_clients_to_grants' => false,
+    'limit_clients_to_grants' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -204,7 +204,7 @@ return [
     | This is useful to allow certain scopes to be used only with certain grant types
     |
     */
-    'limit_scopes_to_grants' => false,
+    'limit_scopes_to_grants' => true,
 
     /*
     |--------------------------------------------------------------------------

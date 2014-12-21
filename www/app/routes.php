@@ -17,7 +17,7 @@ Route::post('oauth/access_token', function() {
 
 Route::api(['version' => 'v1', 'protected' => true], function () {
 
-    Route::get('alumni', ['scopes' => 'alumni_data', function () {
+    Route::get('alumni', ['scopes' => 'access_alumni', function () {
 
         echo "test alumni";
     }]);
