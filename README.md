@@ -51,7 +51,7 @@ return array(
 Run Migration &amp; Seeder
 ```bash
 $ vagrant ssh
-$ cd /vagrant/www
+$ cd /vagrant
 $ php artisan migrate
 $ php artisan db:seed
 ```
