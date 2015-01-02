@@ -21,7 +21,7 @@ Route::post('oauth/access_token', function() {
 Route::api(['version' => 'v1'], function () {
 
     Route::group(['protected' => true, 'scopes' => 'access_alumni'], function () {
-        Route::resource('alumni', 'Api\V1\Controllers\AlumniController', ['except' => ['create', 'edit']]);
+        Route::resource('alumni', 'Satuteladan\Api\V1\Controllers\AlumniController', ['except' => ['create', 'edit']]);
     });
 
 
@@ -31,6 +31,6 @@ Route::api(['version' => 'v1'], function () {
     });
 
 
-    Route::get('/', 'Api\V1\Controllers\HomeController@index');
+    Route::get('/', 'Satuteladan\Api\V1\Controllers\HomeController@index');
 });
 

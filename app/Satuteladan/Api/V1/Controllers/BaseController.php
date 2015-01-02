@@ -1,6 +1,6 @@
 <?php
 
-namespace Api\V1\Controllers;
+namespace Satuteladan\Api\V1\Controllers;
 
 use Illuminate\Routing\Controller;
 use Dingo\Api\Routing\ControllerTrait;
