@@ -11,13 +11,15 @@
 |
 */
 
-Route::post('oauth/access_token', function() {
-    return Response::json(Authorizer::issueAccessToken());
-});
 
-Route::api(['version' => 'v1', 'protected' => true], function () {
+Route::api(['version' => 'v1'], function () {
 
-    Route::get('alumni', ['scopes' => 'access_alumni', function () {
+    Route::post('oauth/access_token', function() {
+
+        return Response::json(Authorizer::issueAccessToken());
+    });
+
+    Route::get('alumni', ['protected' => true, 'scopes' => 'access_alumni', function () {
 
         echo "test alumni";
     }]);
@@ -26,9 +28,7 @@ Route::api(['version' => 'v1', 'protected' => true], function () {
 
         echo "test news";
     });
-});
 
-Route::get('/', function()
-{
-	return View::make('hello');
+
+    Route::get('/', 'Api\V1\Controllers\HomeController@index');
 });
